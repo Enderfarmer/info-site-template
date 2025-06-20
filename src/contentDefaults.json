@@ -1,0 +1,20 @@
+{
+    "siteTitle": "Default Title",
+    "siteDescription": "This is the default description for the site.",
+    "keywords": ["default"],
+    "author": "Default Author",
+    "language": "en-US",
+    "themeColor": "#ffffff",
+    "socialMedia": {
+        "present": false
+    },
+    "contactEmail": "",
+    "pages": [
+        {
+            "title": "Dummy",
+            "slug": "dummy",
+            "description": "This is a dummy page for the default info site.",
+            "content": "Welcome to the default info site dummy!"
+        }
+    ]
+}
