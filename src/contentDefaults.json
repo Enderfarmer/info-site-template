@@ -15,6 +15,30 @@
             "slug": "dummy",
             "description": "This is a dummy page for the default info site.",
             "content": "Welcome to the default info site dummy!"
+        },
+        {
+            "title": "About",
+            "slug": "about",
+            "description": "Learn more about this default info site.",
+            "content": "This is the about page of the default info site."
+        },
+        {
+            "title": "Contact",
+            "slug": "contact",
+            "description": "Get in touch with us.",
+            "content": "This is the contact page of the default info site."
+        },
+        {
+            "title": "Privacy Policy",
+            "slug": "privacy-policy",
+            "description": "Read our privacy policy.",
+            "content": "This is the privacy policy page of the default info site."
+        },
+        {
+            "title": "lorem-ipsum",
+            "slug": "lorem-ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }
     ]
 }
