@@ -19,6 +19,10 @@ export interface SiteData {
     author?: string;
     language?: string;
     url?: string;
+    navLinks?: { text: string; href: string }[];
+    brandColor?: string;
+    brandColorDark?: string;
+    brandColorIsDark?: boolean;
     socialMedia?: {
         present: boolean;
         twitter?: string;
@@ -34,6 +38,7 @@ export interface SiteData {
     contactEmail?: string;
     pages?: Page[];
 }
+type Theme = "light" | "dark";
 declare module "content.json" {
     const data: SiteData;
     export default data;

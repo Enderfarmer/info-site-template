@@ -8,7 +8,28 @@
     "socialMedia": {
         "present": false
     },
+    "brandColor": "skyblue",
+    "brandColorDark": "#00008B",
+    "brandColorIsDark": false,
     "contactEmail": "",
+    "navLinks": [
+        {
+            "text": "Dummy",
+            "href": "/dummy"
+        },
+        {
+            "text": "About",
+            "href": "/about"
+        },
+        {
+            "text": "Contact",
+            "href": "/contact"
+        },
+        {
+            "text": "Lorem Ipsum",
+            "href": "/lorem-ipsum"
+        }
+    ],
     "pages": [
         {
             "title": "Dummy",
@@ -27,12 +48,6 @@
             "slug": "contact",
             "description": "Get in touch with us.",
             "content": "This is the contact page of the default info site."
-        },
-        {
-            "title": "Privacy Policy",
-            "slug": "privacy-policy",
-            "description": "Read our privacy policy.",
-            "content": "This is the privacy policy page of the default info site."
         },
         {
             "title": "lorem-ipsum",
