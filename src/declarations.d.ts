@@ -7,9 +7,12 @@ interface EmbedImage {
 }
 interface Page {
     title: string;
+    shortTitle?: string;
+    linkText?: string;
     slug: string;
     content: string;
     description?: string;
+    withLink?: boolean;
     images?: EmbedImage[];
 }
 export interface SiteData {
@@ -19,7 +22,7 @@ export interface SiteData {
     author?: string;
     language?: string;
     url?: string;
-    navLinks?: { text: string; href: string }[];
+    customNavLinks?: { text: string; href: string }[];
     brandColor?: string;
     brandColorDark?: string;
     brandColorIsDark?: boolean;

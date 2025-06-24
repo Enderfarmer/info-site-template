@@ -1,3 +1,12 @@
 {
-    "siteTitle": "My Info Site"
+    "siteTitle": "My Info Site",
+    "pages": [
+        {
+            "title": "Custom Page",
+            "slug": "custom-page",
+            "description": "This is a custom page for the info site.",
+            "content": "Welcome to the custom page of the info site!"
+        }
+    ],
+    "additionalNavLinks": [{ "text": "Custom Page", "href": "/custom-page" }]
 }

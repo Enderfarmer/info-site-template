@@ -12,12 +12,23 @@ function App() {
     Object.keys(defaults).forEach((key) => {
         validData[key] = data[key] || defaults[key];
     });
+    validData.pages?.forEach((page) => {
+        page.withLink = page.withLink ?? true;
+    });
     console.log("Valid Data:", validData);
     return (
         <ThemeContext.Provider value={localStorage.getItem("theme") || "light"}>
             <HashRouter>
                 <Routes>
-                    <Route index element={<Home data={validData} />} />
+                    <Route
+                        index
+                        element={
+                            <Wrapper
+                                data={validData}
+                                component={<Home data={validData} />}
+                            />
+                        }
+                    />
                     {validData.pages?.map((page) => (
                         <Route
                             element={

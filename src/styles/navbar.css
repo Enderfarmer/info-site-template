@@ -1,4 +1,7 @@
 .navbar {
+    &.navbar-dark {
+        --bs-navbar-color: rgba(255, 255, 255, 0.7);
+    }
     .navbar-brand {
         font-family: "Nunito", sans-serif;
         font-optical-sizing: auto;

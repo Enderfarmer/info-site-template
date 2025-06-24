@@ -12,24 +12,7 @@
     "brandColorDark": "#00008B",
     "brandColorIsDark": false,
     "contactEmail": "",
-    "navLinks": [
-        {
-            "text": "Dummy",
-            "href": "/dummy"
-        },
-        {
-            "text": "About",
-            "href": "/about"
-        },
-        {
-            "text": "Contact",
-            "href": "/contact"
-        },
-        {
-            "text": "Lorem Ipsum",
-            "href": "/lorem-ipsum"
-        }
-    ],
+    "commonFont": "Gotu",
     "pages": [
         {
             "title": "Dummy",

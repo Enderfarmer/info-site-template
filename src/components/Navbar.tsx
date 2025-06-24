@@ -74,11 +74,23 @@ export default function Navbar({ data }: { data: SiteData }) {
                 id="navbarSupportedContent"
             >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    {data.navLinks?.map((link, index) => (
-                        <li className="nav-item" key={index}>
-                            <Link className="nav-link" to={link.href}>
-                                {link.text}
+                    {data.pages?.map((page) => (
+                        <li className="nav-item" key={page.slug}>
+                            <Link className="nav-link" to={page.slug}>
+                                {page.linkText || page.title}
                             </Link>
+                        </li>
+                    ))}
+                    {data.customNavLinks?.map((link) => (
+                        <li className="nav-item" key={link.href}>
+                            <a
+                                className="nav-link"
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {link.text}
+                            </a>
                         </li>
                     ))}
                 </ul>
