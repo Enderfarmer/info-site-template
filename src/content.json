@@ -1,5 +1,5 @@
 {
-    "siteTitle": "My Info Site",
+    "siteTitle": "My very informational Site",
     "pages": [
         {
             "title": "Custom Page",
@@ -7,6 +7,5 @@
             "description": "This is a custom page for the info site.",
             "content": "Welcome to the custom page of the info site!"
         }
-    ],
-    "additionalNavLinks": [{ "text": "Custom Page", "href": "/custom-page" }]
+    ]
 }

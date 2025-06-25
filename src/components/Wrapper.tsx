@@ -11,7 +11,9 @@ export default function Wrapper({
     return (
         <>
             <Navbar data={data} />
-            <div className="container">{component}</div>
+            <div className="container" id="all-content">
+                {component}
+            </div>
         </>
     );
 }

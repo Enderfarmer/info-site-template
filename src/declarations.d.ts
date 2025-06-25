@@ -1,25 +1,19 @@
-interface EmbedImage {
-    src: string;
-    alt?: string;
-    width?: number;
-    height?: number;
-    key: string;
-}
 interface Page {
     title: string;
     shortTitle?: string;
     linkText?: string;
     slug: string;
     content: string;
-    description?: string;
+    description: string;
     withLink?: boolean;
-    images?: EmbedImage[];
 }
 export interface SiteData {
-    siteTitle?: string;
-    siteDescription?: string;
+    siteTitle: string;
+    siteDescription: string;
+    motto?: string;
+    answeredQuestions?: string[];
     keywords?: string[];
-    author?: string;
+    author: string;
     language?: string;
     url?: string;
     customNavLinks?: { text: string; href: string }[];
@@ -39,7 +33,7 @@ export interface SiteData {
         reddit?: string;
     };
     contactEmail?: string;
-    pages?: Page[];
+    pages: Page[];
 }
 type Theme = "light" | "dark";
 declare module "content.json" {

@@ -1,6 +1,7 @@
 {
     "siteTitle": "Default Title",
-    "siteDescription": "This is the default description for the site.",
+    "siteDescription": "Doing something is better than doing nothing.",
+    "motto": "Let's <br /> make it juicy!",
     "keywords": ["default"],
     "author": "Default Author",
     "language": "en-US",
@@ -13,6 +14,12 @@
     "brandColorIsDark": false,
     "contactEmail": "",
     "commonFont": "Gotu",
+    "answeredQuestions": [
+        "What is this?",
+        "How does it work?",
+        "Why should I use it?",
+        "What are the benefits?"
+    ],
     "pages": [
         {
             "title": "Dummy",
