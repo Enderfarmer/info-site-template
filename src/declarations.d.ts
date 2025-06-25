@@ -12,6 +12,7 @@ export interface SiteData {
     siteDescription: string;
     motto?: string;
     answeredQuestions?: string[];
+    startUpPages?: string[];
     keywords?: string[];
     author: string;
     language?: string;

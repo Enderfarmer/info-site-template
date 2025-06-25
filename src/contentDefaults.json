@@ -20,6 +20,7 @@
         "Why should I use it?",
         "What are the benefits?"
     ],
+    "startUpPages": ["Dummy", "About"],
     "pages": [
         {
             "title": "Dummy",

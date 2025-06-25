@@ -1,5 +1,6 @@
 {
     "siteTitle": "My very informational Site",
+    "startUpPages": ["Custom Page"],
     "pages": [
         {
             "title": "Custom Page",

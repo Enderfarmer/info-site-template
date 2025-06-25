@@ -6,7 +6,7 @@ export default function ArrowBack() {
             <img
                 src="/arrow-left.svg"
                 alt="Back to content list"
-                width="40"
+                width={40}
                 height={40}
             />
         </Link>
