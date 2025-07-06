@@ -6,10 +6,20 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 html,
-body {
+body,
+#root {
     height: 100%;
+}
+#all-content {
+    min-height: 100%;
 }
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
+}
+footer a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }

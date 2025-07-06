@@ -1,4 +1,5 @@
 import { SiteData } from "../declarations";
+import Footer from "./Footer.tsx";
 import Navbar from "./Navbar.tsx";
 
 export default function Wrapper({
@@ -14,6 +15,7 @@ export default function Wrapper({
             <div className="container" id="all-content">
                 {component}
             </div>
+            <Footer data={data} />
         </>
     );
 }

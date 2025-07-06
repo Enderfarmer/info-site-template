@@ -6,9 +6,6 @@
     "author": "Default Author",
     "language": "en-US",
     "themeColor": "#ffffff",
-    "socialMedia": {
-        "present": false
-    },
     "brandColor": "skyblue",
     "brandColorDark": "#00008B",
     "brandColorIsDark": false,

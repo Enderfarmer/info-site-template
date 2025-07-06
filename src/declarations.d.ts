@@ -7,6 +7,12 @@ interface Page {
     description: string;
     withLink?: boolean;
 }
+interface SocialMediaLinkWithImage {
+    href: string;
+    image?: string;
+    imageDark?: string;
+}
+type SocialMediaName = string;
 export interface SiteData {
     siteTitle: string;
     siteDescription: string;
@@ -22,16 +28,7 @@ export interface SiteData {
     brandColorDark?: string;
     brandColorIsDark?: boolean;
     socialMedia?: {
-        present: boolean;
-        twitter?: string;
-        facebook?: string;
-        instagram?: string;
-        linkedin?: string;
-        github?: string;
-        youtube?: string;
-        tiktok?: string;
-        pinterest?: string;
-        reddit?: string;
+        [key: SocialMediaName]: SocialMediaLinkWithImage;
     };
     contactEmail?: string;
     pages: Page[];
