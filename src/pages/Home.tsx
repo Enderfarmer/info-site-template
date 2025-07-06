@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Page, SiteData } from "../declarations";
+import { useState } from "react";
 import "../styles/Home.css";
 export default function Home({ data }: { data: SiteData }) {
+    const [searchQuery, setSearchQuery] = useState("");
     return (
         <div>
             <section className="d-flex">
@@ -22,6 +24,33 @@ export default function Home({ data }: { data: SiteData }) {
                         className="w-100"
                     />
                 </div>
+            </section>
+            <br />
+            <section>
+                <div className="form-group w-50 d-inline-block me-3">
+                    <input
+                        type="search"
+                        id="search"
+                        list="searchdata"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="form-control"
+                        placeholder="Search for content"
+                    />
+                </div>
+                <Link
+                    to={{ pathname: "/search", search: `?q=${searchQuery}` }}
+                    className="d-inline-block"
+                >
+                    <button className="btn btn-primary p-2">Search</button>
+                </Link>
+                <datalist id="searchdata">
+                    {data.pages?.map((page, index) => (
+                        <option key={index} value={page.title}>
+                            {page.title}
+                        </option>
+                    ))}
+                </datalist>
             </section>
             <hr />
             <section>

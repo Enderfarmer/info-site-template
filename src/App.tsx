@@ -8,6 +8,7 @@ import { SiteData } from "./declarations";
 import "./index.css";
 import Content from "./pages/Content.tsx";
 import PageGen from "./pages/Page.tsx";
+import Search from "./pages/Search.tsx";
 
 function App() {
     // loop through the possible site data and set defaults
@@ -18,8 +19,8 @@ function App() {
     let validData: SiteData = dataSecond as SiteData;
     validData.pages?.forEach((page) => {
         page.withLink = page.withLink ?? true;
+        // page.withLink = page.withLink === undefined ? false : page.withLink;
     });
-    console.log("Valid Data:", validData);
     return (
         <ThemeContext.Provider value={localStorage.getItem("theme") || "light"}>
             <HashRouter>
@@ -39,6 +40,15 @@ function App() {
                             <Wrapper
                                 data={validData}
                                 component={<Content data={validData} />}
+                            />
+                        }
+                    />
+                    <Route
+                        path="search"
+                        element={
+                            <Wrapper
+                                data={validData}
+                                component={<Search data={validData} />}
                             />
                         }
                     />
