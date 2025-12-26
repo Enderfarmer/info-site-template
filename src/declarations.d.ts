@@ -14,13 +14,13 @@ interface SocialMediaLinkWithImage {
 }
 type SocialMediaName = string;
 export interface SiteData {
-    siteTitle: string;
-    siteDescription: string;
+    siteTitle?: string;
+    siteDescription?: string;
     motto?: string;
     answeredQuestions?: string[];
     startUpPages?: string[];
     keywords?: string[];
-    author: string;
+    author?: string;
     language?: string;
     url?: string;
     customNavLinks?: { text: string; href: string }[];
@@ -31,13 +31,9 @@ export interface SiteData {
         [key: SocialMediaName]: SocialMediaLinkWithImage;
     };
     contactEmail?: string;
-    pages: Page[];
+    pages?: Page[];
 }
 type Theme = "light" | "dark";
-declare module "content.json" {
-    const data: SiteData;
-    export default data;
-}
 declare module "contentDefaults.json" {
     const data: SiteData;
     export default data;

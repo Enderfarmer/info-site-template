@@ -1,6 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
-import data from "./content.json";
 import defaults from "./contentDefaults.json";
 import { ThemeContext } from "./theme.ts";
 import Wrapper from "./components/Wrapper.tsx";
@@ -10,13 +9,18 @@ import Content from "./pages/Content.tsx";
 import PageGen from "./pages/Page.tsx";
 import Search from "./pages/Search.tsx";
 
-function App() {
+/**
+ * The info site generator
+ * @param data {SiteData} The data of the site in SiteData format
+ * @returns A ready app based on the data provided
+ */
+function SiteGen({ data }: { data: SiteData }) {
     // loop through the possible site data and set defaults
     let dataSecond = data;
-    Object.keys(defaults).forEach((key) => {
+    Object.keys(defaults).forEach((key: string) => {
         dataSecond[key] = data[key] || defaults[key];
     });
-    let validData: SiteData = dataSecond as SiteData;
+    let validData: SiteData = dataSecond as unknown as SiteData;
     validData.pages?.forEach((page) => {
         page.withLink = page.withLink ?? true;
         // page.withLink = page.withLink === undefined ? false : page.withLink;
@@ -69,4 +73,4 @@ function App() {
     );
 }
 
-export default App;
+export default SiteGen;
