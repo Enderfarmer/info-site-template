@@ -3,7 +3,7 @@ import Home from "info-site-generator/src/pages/Home.tsx";
 import defaults from "info-site-generator/src/contentDefaults.json";
 import { ThemeContext } from "info-site-generator/src/theme.ts";
 import Wrapper from "info-site-generator/src/components/Wrapper.tsx";
-import { SiteData } from "info-site-generator/src/declarations";
+import { SiteData } from "info-site-generator/declarations";
 import "./index.css";
 import Content from "info-site-generator/src/pages/Content.tsx";
 import PageGen from "info-site-generator/src/pages/Page.tsx";

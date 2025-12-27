@@ -1,4 +1,4 @@
-import { SiteData } from "../declarations";
+import { SiteData } from "../../declarations";
 import Footer from "./Footer.tsx";
 import Navbar from "./Navbar.tsx";
 

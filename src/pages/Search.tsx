@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { SiteData } from "../declarations";
+import { SiteData } from "../../declarations";
 
 export default function Search({ data }: { data: SiteData }) {
     const searchParams = new URLSearchParams(useLocation().search);

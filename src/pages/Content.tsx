@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SiteData } from "../declarations";
+import { SiteData } from "../../declarations";
 
 export default function Content({ data }: { data: SiteData }) {
     return (

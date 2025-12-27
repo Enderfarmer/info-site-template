@@ -38,3 +38,7 @@ declare module "contentDefaults.json" {
     const data: SiteData;
     export default data;
 }
+declare module "index.js" {
+    const SiteGen: Function;
+    export default SiteGen;
+}

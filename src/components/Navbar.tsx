@@ -1,5 +1,5 @@
 import { oppositeTheme, useCurrentTheme } from "../theme.ts";
-import { SiteData, Theme } from "../declarations";
+import { SiteData, Theme } from "../../declarations";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/hamburgers.min.css";

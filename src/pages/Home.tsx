@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Page, SiteData } from "../declarations";
+import { Page, SiteData } from "../../declarations";
 import { useState } from "react";
 import "../styles/Home.css";
 export default function Home({ data }: { data: SiteData }) {
