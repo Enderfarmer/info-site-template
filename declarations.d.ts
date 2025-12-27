@@ -1,9 +1,9 @@
-interface Page {
+interface Page extends React.ReactElement {
     title: string;
     shortTitle?: string;
     linkText?: string;
     slug: string;
-    content: string;
+    content?: string;
     description: string;
     withLink?: boolean;
 }

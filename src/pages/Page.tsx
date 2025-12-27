@@ -11,10 +11,7 @@ export default function PageGen({ page }: { page: Page }) {
             </blockquote>
             <hr />
             <br />
-            <div
-                className="content"
-                dangerouslySetInnerHTML={{ __html: page.content }}
-            ></div>
+            {page.content || page}
         </div>
     );
 }

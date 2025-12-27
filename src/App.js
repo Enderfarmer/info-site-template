@@ -8,13 +8,15 @@ import "./index.css";
 import Content from "info-site-generator/src/pages/Content.tsx";
 import PageGen from "info-site-generator/src/pages/Page.tsx";
 import Search from "info-site-generator/src/pages/Search.tsx";
+import React from "react";
 
 /**
  * The info site generator
  * @param {SiteData} data The data of the site in SiteData format
+ * @param {React.ReactNode[]} children The children
  * @returns A ready app based on the data provided
  */
-function SiteGen({ data }) {
+function SiteGen({ data, children }) {
     // loop through the possible site data and set defaults
     let dataSecond = data;
     Object.keys(defaults).forEach((key) => {
@@ -56,7 +58,7 @@ function SiteGen({ data }) {
                             />
                         }
                     />
-                    {validData.pages?.map((page) => (
+                    {children.map((page) => (
                         <Route
                             element={
                                 <Wrapper
