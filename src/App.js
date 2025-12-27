@@ -1,26 +1,26 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import defaults from "./contentDefaults.json";
-import { ThemeContext } from "./theme.ts";
-import Wrapper from "./components/Wrapper.tsx";
-import { SiteData } from "./declarations";
+import Home from "info-site-generator/src/pages/Home.tsx";
+import defaults from "info-site-generator/src/contentDefaults.json";
+import { ThemeContext } from "info-site-generator/src/theme.ts";
+import Wrapper from "info-site-generator/src/components/Wrapper.tsx";
+import { SiteData } from "info-site-generator/src/declarations";
 import "./index.css";
-import Content from "./pages/Content.tsx";
-import PageGen from "./pages/Page.tsx";
-import Search from "./pages/Search.tsx";
+import Content from "info-site-generator/src/pages/Content.tsx";
+import PageGen from "info-site-generator/src/pages/Page.tsx";
+import Search from "info-site-generator/src/pages/Search.tsx";
 
 /**
  * The info site generator
- * @param data {SiteData} The data of the site in SiteData format
+ * @param {SiteData} data The data of the site in SiteData format
  * @returns A ready app based on the data provided
  */
-function SiteGen({ data }: { data: SiteData }) {
+function SiteGen({ data }) {
     // loop through the possible site data and set defaults
     let dataSecond = data;
-    Object.keys(defaults).forEach((key: string) => {
+    Object.keys(defaults).forEach((key) => {
         dataSecond[key] = data[key] || defaults[key];
     });
-    let validData: SiteData = dataSecond as unknown as SiteData;
+    let validData = dataSecond;
     validData.pages?.forEach((page) => {
         page.withLink = page.withLink ?? true;
         // page.withLink = page.withLink === undefined ? false : page.withLink;
