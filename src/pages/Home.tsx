@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Page, ValidSiteData } from "../../declarations";
+import { PageData, ValidSiteData } from "../../declarations";
 import { useState } from "react";
 import "../styles/Home.css";
 export default function Home({ data }: { data: ValidSiteData }) {
@@ -45,7 +45,7 @@ export default function Home({ data }: { data: ValidSiteData }) {
                     <button className="btn btn-primary p-2">Search</button>
                 </Link>
                 <datalist id="searchdata">
-                    {data.pages?.map((page, index) => (
+                    {Object.values(data.pages).map((page, index) => (
                         <option key={index} value={page.title}>
                             {page.title}
                         </option>
@@ -67,9 +67,9 @@ export default function Home({ data }: { data: ValidSiteData }) {
                 <h2>Dive in with those pages:</h2>
                 <ul>
                     {data.startUpPages?.map((page, index) => {
-                        const pageData: Page | undefined = data.pages.find(
-                            (p) => p.title === page
-                        );
+                        const pageData: PageData | undefined = Object.values(
+                            data.pages
+                        ).find((p) => p.title === page);
                         if (!pageData) {
                             console.warn(
                                 `Page with title "${page}" not found in data.pages`

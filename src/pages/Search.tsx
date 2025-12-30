@@ -27,7 +27,7 @@ export default function Search({ data }: { data: ValidSiteData }) {
                 <button className="btn btn-primary p-2">Search</button>
             </Link>
             <datalist id="search-data">
-                {data.pages?.map((page, index) => (
+                {Object.values(data.pages).map((page, index) => (
                     <option key={index} value={page.title}>
                         {page.title}
                     </option>
@@ -35,7 +35,7 @@ export default function Search({ data }: { data: ValidSiteData }) {
             </datalist>
             <hr />
             <h2>Results for "{query}"</h2>
-            {data.pages?.map((page, index) => {
+            {Object.values(data.pages).map((page, index) => {
                 if (
                     page.title.toLowerCase().includes(searchQuery.toLowerCase())
                 )

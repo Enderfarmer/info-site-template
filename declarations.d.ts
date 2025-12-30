@@ -1,4 +1,6 @@
-interface Page extends React.ReactElement {
+import React from "react";
+
+interface PageData {
     title: string;
     shortTitle?: string;
     linkText?: string;
@@ -7,6 +9,10 @@ interface Page extends React.ReactElement {
     description: string;
     withLink?: boolean;
 }
+interface PageComponentProps {
+    id: string;
+}
+interface Page extends React.ReactElement<PageComponentProps> {}
 interface SocialMediaLinkWithImage {
     href: string;
     image?: string;
@@ -31,7 +37,9 @@ export interface UserProvidedSiteData {
         [key: SocialMediaName]: SocialMediaLinkWithImage;
     };
     contactEmail?: string;
-    pages?: Page[];
+    pages?: {
+        [key: string]: PageData;
+    };
 }
 export interface ValidSiteData {
     siteTitle: string;
@@ -51,7 +59,9 @@ export interface ValidSiteData {
         [key: SocialMediaName]: SocialMediaLinkWithImage;
     };
     contactEmail: string;
-    pages: Page[];
+    pages: {
+        [key: string]: PageData;
+    };
 }
 type Theme = "light" | "dark";
 declare module "contentDefaults.json" {

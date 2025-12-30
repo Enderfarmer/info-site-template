@@ -74,7 +74,7 @@ export default function Navbar({ data }: { data: ValidSiteData }) {
                 id="navbarSupportedContent"
             >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    {data.pages?.map((page) => (
+                    {Object.values(data.pages).map((page) => (
                         <li className="nav-item" key={page.slug}>
                             <Link className="nav-link" to={page.slug}>
                                 {page.linkText || page.title}

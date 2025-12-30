@@ -6,7 +6,7 @@ export default function Content({ data }: { data: ValidSiteData }) {
         <div className="container">
             <h2>{data.siteTitle} content</h2>
             <div className="row">
-                {data.pages.map((page, index) => (
+                {Object.values(data.pages).map((page, index) => (
                     <div key={index} className="col-md-4 mb-4 mx-2">
                         <div className="card h-100">
                             <div className="card-body">

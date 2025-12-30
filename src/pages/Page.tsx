@@ -1,17 +1,23 @@
 import ArrowBack from "../components/ArrowBack";
-import { Page } from "../../declarations";
+import { PageData } from "../../declarations";
 
-export default function PageGen({ page }: { page: Page }) {
+export default function PageGen({
+    page,
+    data,
+}: {
+    page: React.ReactElement;
+    data: PageData;
+}) {
     return (
         <div className="container mt-3">
             <ArrowBack />
-            <h2>{page.title}</h2>
+            <h2>{data.title}</h2>
             <blockquote>
-                {page.shortTitle || page.title} - {page.description}
+                {data.shortTitle || data.title} - {data.description}
             </blockquote>
             <hr />
             <br />
-            {page.content || page}
+            {page || data.content}
         </div>
     );
 }
