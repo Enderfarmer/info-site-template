@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { SiteData } from "../../declarations";
+import { ValidSiteData } from "../../declarations";
 
-export default function Search({ data }: { data: SiteData }) {
+export default function Search({ data }: { data: ValidSiteData }) {
     const searchParams = new URLSearchParams(useLocation().search);
     const query = searchParams.get("q") || "";
     const [searchQuery, setSearchQuery] = useState(query);

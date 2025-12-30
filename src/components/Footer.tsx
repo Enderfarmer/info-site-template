@@ -1,7 +1,7 @@
-import { SiteData } from "../declarations";
-import { useCurrentTheme } from "../theme.ts";
+import { ValidSiteData } from "../../declarations.d";
+import { useCurrentTheme } from "../theme";
 
-export default function Footer({ data }: { data: SiteData }) {
+export default function Footer({ data }: { data: ValidSiteData }) {
     const [theme] = useCurrentTheme();
     return (
         <footer

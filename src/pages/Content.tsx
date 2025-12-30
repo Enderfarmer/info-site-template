@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { SiteData } from "../../declarations";
+import { ValidSiteData } from "../../declarations";
 
-export default function Content({ data }: { data: SiteData }) {
+export default function Content({ data }: { data: ValidSiteData }) {
     return (
         <div className="container">
             <h2>{data.siteTitle} content</h2>

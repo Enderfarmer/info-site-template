@@ -1,4 +1,4 @@
-import ArrowBack from "../components/ArrowBack.tsx";
+import ArrowBack from "../components/ArrowBack";
 import { Page } from "../../declarations";
 
 export default function PageGen({ page }: { page: Page }) {

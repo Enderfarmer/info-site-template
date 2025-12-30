@@ -1,11 +1,11 @@
-import { oppositeTheme, useCurrentTheme } from "../theme.ts";
-import { SiteData, Theme } from "../../declarations";
+import { oppositeTheme, useCurrentTheme } from "../theme";
+import { ValidSiteData, Theme } from "../../declarations";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/hamburgers.min.css";
 import "../styles/navbar.css";
 
-export default function Navbar({ data }: { data: SiteData }) {
+export default function Navbar({ data }: { data: ValidSiteData }) {
     const [theme, setTheme]: [Theme, Function] = useCurrentTheme();
     const [active, setActive] = useState(false);
     document.documentElement.setAttribute("data-bs-theme", theme);

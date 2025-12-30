@@ -1,12 +1,12 @@
-import { SiteData } from "../../declarations";
-import Footer from "./Footer.tsx";
-import Navbar from "./Navbar.tsx";
+import { ValidSiteData } from "../../declarations";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 export default function Wrapper({
     data,
     component,
 }: {
-    data: SiteData;
+    data: ValidSiteData;
     component: any;
 }) {
     return (

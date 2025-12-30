@@ -1,21 +1,16 @@
 {
     "name": "info-site-generator",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "main": "lib/index.js",
     "author": "Enderfarmer",
     "license": "MIT",
-    "types": "declarations.d.ts",
     "repository": "Enderfarmer/info-site-template",
     "private": false,
-    "dependencies": {
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "react-router-dom": "^7.6.2",
-        "react-scripts": "5.0.1"
-    },
+    "types": "lib/index.d.ts",
     "scripts": {
-        "start": "react-scripts start",
-        "build": "babel src -d lib"
+        "build": "npm run build:js && npm run build:types",
+        "build:js": "babel src -d lib --extensions \".ts,.tsx\" --copy-files",
+        "build:types": "tsc"
     },
     "files": [
         "lib"
@@ -41,6 +36,13 @@
     "devDependencies": {
         "@babel/cli": "^7.28.3",
         "@babel/core": "^7.28.5",
-        "@babel/preset-react": "^7.28.5"
+        "@babel/preset-react": "^7.28.5",
+        "@babel/preset-typescript": "^7.28.5",
+        "@types/react": "^19.2.7",
+        "@types/react-dom": "^19.2.3"
+    },
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
     }
 }

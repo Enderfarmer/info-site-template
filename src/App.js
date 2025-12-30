@@ -3,7 +3,10 @@ import Home from "info-site-generator/src/pages/Home.tsx";
 import defaults from "info-site-generator/src/contentDefaults.json";
 import { ThemeContext } from "info-site-generator/src/theme.ts";
 import Wrapper from "info-site-generator/src/components/Wrapper.tsx";
-import { SiteData } from "info-site-generator/declarations";
+import {
+    UserProvidedSiteData,
+    ValidSiteData,
+} from "info-site-generator/declarations";
 import "./index.css";
 import Content from "info-site-generator/src/pages/Content.tsx";
 import PageGen from "info-site-generator/src/pages/Page.tsx";
@@ -12,7 +15,7 @@ import React from "react";
 
 /**
  * The info site generator
- * @param {SiteData} data The data of the site in SiteData format
+ * @param {UserProvidedSiteData} data The data of the site in SiteData format
  * @param {React.ReactNode[]} children The children
  * @returns A ready app based on the data provided
  */
@@ -22,6 +25,9 @@ function SiteGen({ data, children }) {
     Object.keys(defaults).forEach((key) => {
         dataSecond[key] = data[key] || defaults[key];
     });
+    /**
+     * @type {ValidSiteData}
+     */
     let validData = dataSecond;
     validData.pages?.forEach((page) => {
         page.withLink = page.withLink ?? true;

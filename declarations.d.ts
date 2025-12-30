@@ -13,7 +13,7 @@ interface SocialMediaLinkWithImage {
     imageDark?: string;
 }
 type SocialMediaName = string;
-export interface SiteData {
+export interface UserProvidedSiteData {
     siteTitle?: string;
     siteDescription?: string;
     motto?: string;
@@ -33,9 +33,29 @@ export interface SiteData {
     contactEmail?: string;
     pages?: Page[];
 }
+export interface ValidSiteData {
+    siteTitle: string;
+    siteDescription: string;
+    motto: string;
+    answeredQuestions: string[];
+    startUpPages: string[];
+    keywords: string[];
+    author: string;
+    language: string;
+    url: string;
+    customNavLinks: { text: string; href: string }[];
+    brandColor: string;
+    brandColorDark: string;
+    brandColorIsDark: boolean;
+    socialMedia: {
+        [key: SocialMediaName]: SocialMediaLinkWithImage;
+    };
+    contactEmail: string;
+    pages: Page[];
+}
 type Theme = "light" | "dark";
 declare module "contentDefaults.json" {
-    const data: SiteData;
+    const data: UserProvidedSiteData;
     export default data;
 }
 declare module "index.js" {
