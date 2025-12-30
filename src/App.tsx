@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import defaults from "./contentDefaults.json";
 import { ThemeContext } from "./theme";

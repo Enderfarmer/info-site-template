@@ -1,7 +1,7 @@
 import { oppositeTheme, useCurrentTheme } from "../theme";
 import { ValidSiteData, Theme } from "../../declarations";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import "../styles/hamburgers.min.css";
 import "../styles/navbar.css";
 

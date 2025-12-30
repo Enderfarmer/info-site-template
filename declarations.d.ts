@@ -68,7 +68,7 @@ declare module "contentDefaults.json" {
     const data: UserProvidedSiteData;
     export default data;
 }
-declare module "index.js" {
+declare module "info-site-generator" {
     const SiteGen: Function;
     export default SiteGen;
 }

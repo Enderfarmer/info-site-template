@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { PageData, ValidSiteData } from "../../declarations";
 import { useState } from "react";
 import "../styles/Home.css";

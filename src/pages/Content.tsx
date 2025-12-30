@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { ValidSiteData } from "../../declarations";
 
 export default function Content({ data }: { data: ValidSiteData }) {

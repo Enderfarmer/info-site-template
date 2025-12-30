@@ -1,6 +1,6 @@
 {
     "name": "info-site-generator",
-    "version": "1.0.7",
+    "version": "1.0.9s",
     "main": "lib/index.js",
     "author": "Enderfarmer",
     "license": "MIT",
