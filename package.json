@@ -1,7 +1,7 @@
 {
     "name": "info-site-generator",
-    "version": "1.0.2",
-    "main": "index.js",
+    "version": "1.0.3",
+    "main": "lib/index.js",
     "author": "Enderfarmer",
     "license": "MIT",
     "types": "declarations.d.ts",
@@ -15,8 +15,11 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build"
+        "build": "babel src -d lib"
     },
+    "files": [
+        "lib"
+    ],
     "eslintConfig": {
         "extends": [
             "react-app",
@@ -34,5 +37,10 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.28.3",
+        "@babel/core": "^7.28.5",
+        "@babel/preset-react": "^7.28.5"
     }
 }
