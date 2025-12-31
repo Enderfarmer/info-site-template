@@ -1,5 +1,10 @@
-import { ValidSiteData } from "../../declarations.d";
+import { SocialMediaName, ValidSiteData } from "../../declarations.d";
 import { useCurrentTheme } from "../theme";
+import YouTubeLogo from "../assets/youtube.png";
+import XLogo from "../assets/x.png";
+import InstaLogo from "../assets/instagram.png";
+import TelegramLogo from "../assets/telegram.svg";
+import FaceBookLogo from "../assets/facebook.png";
 
 export default function Footer({ data }: { data: ValidSiteData }) {
     const [theme] = useCurrentTheme();
@@ -19,25 +24,38 @@ export default function Footer({ data }: { data: ValidSiteData }) {
                     <div>
                         Follow us on <br />
                         <ul className="d-flex flex-wrap w-100 mw-100 list-unstyled link-underline-opacity-0 link-underline-opactiy-100">
-                            {Object.entries(data.socialMedia).map(
-                                ([key, value]) => (
-                                    <li className="p-2 m-3" key={key}>
-                                        {value.image && value.imageDark && (
-                                            <img
-                                                src={
-                                                    theme === "light"
-                                                        ? value.image
-                                                        : value.imageDark
-                                                }
-                                                alt={key}
-                                            />
-                                        )}
-                                        <a href={value.href} className="p-1">
-                                            {key}
-                                        </a>
-                                    </li>
-                                )
-                            )}
+                            {Object.entries<string>(
+                                data.socialMedia as { [s: string]: string }
+                            ).map(([key, value]) => {
+                                let imageSrc = YouTubeLogo;
+                                switch (key) {
+                                    case "youtube":
+                                        break;
+                                    case "x":
+                                        imageSrc = XLogo;
+                                        break;
+                                    case "telegram":
+                                        imageSrc = TelegramLogo;
+                                        break;
+                                    case "instagram":
+                                        imageSrc = InstaLogo;
+                                        break;
+                                    case "facebook":
+                                        imageSrc = FaceBookLogo;
+                                        break;
+                                    default:
+                                        imageSrc = null;
+                                }
+                                return (
+                                    <a
+                                        className="p-2 m-3"
+                                        key={key}
+                                        href={value}
+                                    >
+                                        <img src={imageSrc} alt={key} />
+                                    </a>
+                                );
+                            })}
                         </ul>
                     </div>
                 )}

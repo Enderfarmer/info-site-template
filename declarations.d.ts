@@ -13,12 +13,11 @@ interface PageComponentProps {
     id: string;
 }
 interface Page extends React.ReactElement<PageComponentProps> {}
-interface SocialMediaLinkWithImage {
-    href: string;
-    image?: string;
-    imageDark?: string;
+
+type SocialMediaName = "x" | "youtube" | "telegram" | "instagram" | "facebook";
+interface SocialMedia {
+    [key: SocialMediaName]: string;
 }
-type SocialMediaName = string;
 export interface UserProvidedSiteData {
     siteTitle?: string;
     siteDescription?: string;
@@ -33,9 +32,7 @@ export interface UserProvidedSiteData {
     brandColor?: string;
     brandColorDark?: string;
     brandColorIsDark?: boolean;
-    socialMedia?: {
-        [key: SocialMediaName]: SocialMediaLinkWithImage;
-    };
+    socialMedia?: SocialMedia;
     contactEmail?: string;
     pages?: {
         [key: string]: PageData;
@@ -55,9 +52,7 @@ export interface ValidSiteData {
     brandColor: string;
     brandColorDark: string;
     brandColorIsDark: boolean;
-    socialMedia: {
-        [key: SocialMediaName]: SocialMediaLinkWithImage;
-    };
+    socialMedia: SocialMedia;
     contactEmail: string;
     pages: {
         [key: string]: PageData;

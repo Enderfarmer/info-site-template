@@ -4,11 +4,33 @@ import { useState } from "react";
 import { Link } from "react-router";
 import "../styles/hamburgers.min.css";
 import "../styles/navbar.css";
+import LightTheme from "../assets/light-theme.svg";
+import LightThemeWhite from "../assets/light-theme-white.svg";
+import DarkTheme from "../assets/dark-theme.svg";
+import DarkThemeWhite from "../assets/dark-theme-white.svg";
 
 export default function Navbar({ data }: { data: ValidSiteData }) {
     const [theme, setTheme]: [Theme, Function] = useCurrentTheme();
     const [active, setActive] = useState(false);
     document.documentElement.setAttribute("data-bs-theme", theme);
+    let themeImageSrc;
+    if (data.brandColorIsDark) {
+        switch (theme) {
+            case "light":
+                themeImageSrc = LightThemeWhite;
+                break;
+            default:
+                themeImageSrc = DarkThemeWhite;
+        }
+    } else {
+        switch (theme) {
+            case "light":
+                themeImageSrc = LightTheme;
+                break;
+            default:
+                themeImageSrc = DarkTheme;
+        }
+    }
     return (
         <nav
             className={`navbar border-bottom border-1 border-dark mb-2 d-flex justify-content-between align-items-center ${
@@ -36,11 +58,7 @@ export default function Navbar({ data }: { data: ValidSiteData }) {
                         title="Toggle theme"
                     >
                         <img
-                            src={
-                                data.brandColorIsDark || theme === "dark"
-                                    ? `/${theme}-theme-white.svg`
-                                    : `/${theme}-theme.svg`
-                            }
+                            src={themeImageSrc}
                             className="d-inline"
                             alt={`${theme} theme`}
                         />

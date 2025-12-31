@@ -1,13 +1,22 @@
 {
     "name": "info-site-generator",
-    "version": "1.0.9s",
+    "version": "1.1.1",
     "main": "lib/index.js",
     "author": "Enderfarmer",
     "license": "MIT",
     "repository": "Enderfarmer/info-site-template",
     "private": false,
     "types": "lib/index.d.ts",
+    "keywords": [
+        "informational",
+        "website",
+        "generator",
+        "template",
+        "quick",
+        "time saving"
+    ],
     "scripts": {
+        "prepublishOnly": "echo 'Did you remember to run npm run build? (y/n)' && read -r CONFIRM && [ \"$CONFIRM\" = \"y\" ]",
         "build": "npm run build:js && npm run build:types",
         "build:js": "babel src -d lib --extensions \".ts,.tsx\" --copy-files",
         "build:types": "tsc"
@@ -43,6 +52,8 @@
     },
     "peerDependencies": {
         "react": ">=16.8.0",
-        "react-dom": ">=16.8.0"
+        "react-dom": ">=16.8.0",
+        "react-router": ">=7.11.0",
+        "react-router-dom": ">=7.11.0"
     }
 }

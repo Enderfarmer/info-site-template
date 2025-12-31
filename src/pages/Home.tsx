@@ -2,25 +2,26 @@ import { Link } from "react-router";
 import { PageData, ValidSiteData } from "../../declarations";
 import { useState } from "react";
 import "../styles/Home.css";
+import HomeImage from "../assets/home-image.jpg";
 export default function Home({ data }: { data: ValidSiteData }) {
     const [searchQuery, setSearchQuery] = useState("");
+    const [imgSrc, setImgSrc] = useState("/home-image.jpg");
     return (
         <div>
             <section className="d-flex">
                 <div className="w-50 d-flex flex-column justify-content-center align-items-center">
-                    <h1
-                        className="fw-bolder center"
-                        id="hero-title"
-                        dangerouslySetInnerHTML={{
-                            __html: data.motto || data.siteTitle,
-                        }}
-                    ></h1>
+                    <h1 className="fw-bolder center" id="hero-title">
+                        {data.motto || data.siteTitle}
+                    </h1>
                     <span>{data.siteDescription}</span>
                 </div>
                 <div className="w-50 p-2">
                     <img
-                        src="/home-image.jpg"
-                        alt="Eye-catcher"
+                        src={imgSrc}
+                        onError={() => {
+                            setImgSrc(HomeImage);
+                        }}
+                        alt="Eye-catcher image"
                         className="w-100"
                     />
                 </div>
