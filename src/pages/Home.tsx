@@ -61,7 +61,7 @@ export default function Home({ data }: { data: ValidSiteData }) {
                         <li key={index}>{question}</li>
                     ))}
                 </ul>
-                <Link to="all-content">Descover more content</Link>
+                <Link to="all-content">Discover more content</Link>
             </section>
             <hr />
             <section>

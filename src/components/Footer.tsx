@@ -52,7 +52,11 @@ export default function Footer({ data }: { data: ValidSiteData }) {
                                         key={key}
                                         href={value}
                                     >
-                                        <img src={imageSrc} alt={key} />
+                                        <img
+                                            src={imageSrc}
+                                            alt={key}
+                                            width={40}
+                                        />
                                     </a>
                                 );
                             })}
