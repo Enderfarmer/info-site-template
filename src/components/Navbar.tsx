@@ -94,7 +94,10 @@ export default function Navbar({ data }: { data: ValidSiteData }) {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     {Object.values(data.pages).map((page) => (
                         <li className="nav-item" key={page.slug}>
-                            <Link className="nav-link" to={page.slug}>
+                            <Link
+                                className="nav-link"
+                                to={"/".concat(page.slug)}
+                            >
                                 {page.linkText || page.title}
                             </Link>
                         </li>

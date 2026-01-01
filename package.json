@@ -1,6 +1,6 @@
 {
     "name": "info-site-generator",
-    "version": "1.1.1",
+    "version": "1.1.5",
     "main": "lib/index.js",
     "author": "Enderfarmer",
     "license": "MIT",
@@ -16,7 +16,7 @@
         "time saving"
     ],
     "scripts": {
-        "prepublishOnly": "echo 'Did you remember to run npm run build? (y/n)' && read -r CONFIRM && [ \"$CONFIRM\" = \"y\" ]",
+        "prepublishOnly": "npm run build",
         "build": "npm run build:js && npm run build:types",
         "build:js": "babel src -d lib --extensions \".ts,.tsx\" --copy-files",
         "build:types": "tsc"

@@ -5,7 +5,7 @@ export default function PageGen({
     page,
     data,
 }: {
-    page: React.ReactElement;
+    page?: React.ReactElement;
     data: PageData;
 }) {
     return (
