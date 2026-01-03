@@ -1,3 +1,3 @@
-import SiteGen from "./App.js";
+import SiteGen from "./App.tsx";
 
 export default SiteGen;

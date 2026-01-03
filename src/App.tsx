@@ -42,14 +42,29 @@ function SiteGen({
                 />
             );
         }
+        const pageElement: Page = child as Page;
+        // 1. Get the 'type' (this is the actual function or class)
+        const componentType = child.type;
 
-        // Tell TS this element has props with an 'id'
-        const pageElement = child as Page;
-        const pageId = pageElement.props.id;
+        // 2. Extract the name
+        // We check for 'displayName' first (React convention) then 'name'
+        let componentName = "";
 
-        // Get the metadata from our data object
+        if (typeof componentType === "string") {
+            componentName = componentType; // It's a "div", "span", etc.
+        } else {
+            // It's a function or class component
+            componentName =
+                (componentType as any).displayName ||
+                (componentType as any).name;
+        }
+
+        // 3. Fallback logic: Use prop ID, then function name
+        const pageId = pageElement.props.id || componentName.toLowerCase();
+
+        console.log(`Detected ID: ${pageId}`); // Helpful for debugging!
+
         const pageMetadata = validData.pages[pageId];
-
         if (!pageMetadata) {
             console.warn(
                 `No metadata found in data object for page ID: ${pageId}`

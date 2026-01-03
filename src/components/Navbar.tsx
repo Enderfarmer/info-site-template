@@ -42,7 +42,12 @@ export default function Navbar({ data }: { data: ValidSiteData }) {
                     : { backgroundColor: data.brandColorDark }
             }
         >
-            <Link className="navbar-brand px-2" to="/">
+            <Link
+                className={`navbar-brand px-2 text-${
+                    data.brandColorIsDark ? "light" : "dark"
+                }`}
+                to="/"
+            >
                 {data.siteTitle}
             </Link>
             <span>
@@ -80,8 +85,8 @@ export default function Navbar({ data }: { data: ValidSiteData }) {
                 >
                     <span className="hamburger-box">
                         <span
-                            className={`hamburger-inner ${
-                                theme === "dark" && "bg-light"
+                            className={`hamburger-inner hamburger-${
+                                data.brandColorIsDark ? "light" : "dark"
                             }`}
                         ></span>
                     </span>
@@ -92,20 +97,30 @@ export default function Navbar({ data }: { data: ValidSiteData }) {
                 id="navbarSupportedContent"
             >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    {Object.values(data.pages).map((page) => (
-                        <li className="nav-item" key={page.slug}>
-                            <Link
-                                className="nav-link"
-                                to={"/".concat(page.slug)}
-                            >
-                                {page.linkText || page.title}
-                            </Link>
-                        </li>
-                    ))}
+                    {Object.values(data.pages).map((page) => {
+                        return (
+                            page.withLink && (
+                                <li className="nav-item" key={page.slug}>
+                                    <Link
+                                        className={`nav-link text-${
+                                            data.brandColorIsDark
+                                                ? "light"
+                                                : "dark"
+                                        }`}
+                                        to={"/".concat(page.slug)}
+                                    >
+                                        {page.linkText || page.title}
+                                    </Link>
+                                </li>
+                            )
+                        );
+                    })}
                     {data.customNavLinks?.map((link) => (
                         <li className="nav-item" key={link.href}>
                             <a
-                                className="nav-link"
+                                className={`nav-link text-${
+                                    data.brandColorIsDark ? "light" : "dark"
+                                }`}
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"

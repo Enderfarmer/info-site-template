@@ -1,7 +1,4 @@
 .navbar {
-    &.navbar-dark {
-        --bs-navbar-color: rgba(255, 255, 255, 0.7);
-    }
     .navbar-brand {
         font-family: "Nunito", sans-serif;
         font-optical-sizing: auto;
@@ -13,9 +10,22 @@
         border: none;
         cursor: pointer;
     }
-    .hamburger-inner,
-    .hamburger-inner:after,
-    .hamburger-inner:before {
-        background-color: var(--bs-body-color) !important;
+    .hamburger-light {
+        background-color: whitesmoke;
+        &::after {
+            background-color: whitesmoke;
+        }
+        &::before {
+            background-color: whitesmoke;
+        }
+    }
+    .hamburger-dark {
+        background-color: rgb(6, 23, 41);
+        &::after {
+            background-color: rgb(6, 23, 41);
+        }
+        &::before {
+            background-color: rgb(6, 23, 41);
+        }
     }
 }
